@@ -419,7 +419,7 @@ void transform() {
 	auto translateMatrix = math::translate(math::mat4f(), 0.0f, 0.0f, -5.0f);
 	auto m = translateMatrix * rotateMatrix;
 
-	m = math::scale(m, 0.01f, 0.01f, 0.01f);
+	m = math::scale(m, 0.1f, 0.1f, 0.1f);
 	model->setModelMatrix(m);
 }
 
@@ -449,9 +449,8 @@ void prepare() {
 	sgl->enable(CULL_FACE);
 
 	model = new Model();
-	//model->read("assets/model/dinosaur/source/Rampaging T-Rex.glb");
+	model->read("assets/model/dinosaur/source/Rampaging T-Rex.glb");
 	//model->read("assets/model/Fist Fight B.fbx");
-	model->read("assets/model/challenger2.fbx");
     //model->read("assets/model/bag/backpack.obj");
 }
 
