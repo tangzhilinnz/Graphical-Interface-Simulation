@@ -130,7 +130,7 @@ bool Clipper::inside(const math::vec4f& point, const math::vec4f& plane) {
 	return math::dot(point, plane) >= 0.0f;
 }
 
-//注意，这里只能插值位于平面两侧的点
+//注意，这里只能插值位于平面两侧的点, 所以与平面向量点乘结果必定一正一负
 VsOutput Clipper::intersect(const VsOutput& last, const VsOutput& current, const math::vec4f& plane) {
 	VsOutput output;
 

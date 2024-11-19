@@ -504,6 +504,11 @@ namespace math {
 
 
 	//屏幕空间变换函数
+	//物体的顶点经过透视投影矩阵变换后，会得到一个剪裁空间的顶点坐标，即W = -Ze,
+	//只有X/Y/Z都除以W以后，才能得到最终的NDC坐标。screenMapping只能用于NDC下面，
+	//的顶注意：这一步会出现W = 0的可能，所以在除法前已经做了施加了剔除算法。正
+	// 
+	//交投影也需要除以W保持统一性，只不过W = 1。
 	template<typename T>
 	Matrix44<T> screenMatrix(const uint32_t& width, const uint32_t& height) {
 		Matrix44<T> result(static_cast<T>(1));

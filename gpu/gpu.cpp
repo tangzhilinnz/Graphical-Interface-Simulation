@@ -261,7 +261,7 @@ void GPU::drawElement(const uint32_t& drawMode, const uint32_t& first, const uin
 	* VertexShader处理阶段
 	* 作用：
 	*	按照输入的Ebo的index顺序来处理顶点，依次通过vsShader，
-		得到的输出结果按序放入vsOutputs中
+		得到裁剪空间的输出结果按序放入vsOutputs中
 	*/
 	std::vector<VsOutput> vsOutputs{};
 	vertexShaderStage(vsOutputs, vao, ebo, first, count);
